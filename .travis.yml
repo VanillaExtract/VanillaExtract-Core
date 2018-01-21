@@ -1,0 +1,21 @@
+language: java
+
+before_install:
+#Make wrapper executable
+ - chmod +x gradlew
+before_cache:
+  - rm -f  $HOME/.gradle/caches/modules-2/modules-2.lock
+  - rm -fr $HOME/.gradle/caches/*/plugin-resolution/
+cache:
+  directories:
+    - $HOME/.gradle/caches/
+    - $HOME/.gradle/wrapper/
+
+after_success:
+#store result
+ - git add -A
+ - git commit -m "Build result [ci skip]"
+ - git config remote.origin.url https://scarger:$GIT_PASS@github.com/scarger/ReferME.git
+ - git push origin HEAD:master
+ #deploy
+ - curl -T build/libs/VanillaCore.jar -u $FTP_USER:$FTP_PASSWORD $DEV_HOST/plugins/
