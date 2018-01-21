@@ -11,12 +11,12 @@ public class VanillaCore extends JavaPlugin {
     public void onEnable(){
         //load disk operations, inject dependencies, etc
         
-        getLogger().info("VanillaExtract Core enabled");
+        getLogger().info("VanillaExtract (Core) v0.1-ALPHA enabled");
     }
 
     @Override
     public void onDisable(){
         //gc,flushing,saving,etc.
-        getLogger().info("VanillaExtract Core disabled");
+        getLogger().info("VanillaExtract (Core) v0.1-ALPHA disabled");
     }
 }
