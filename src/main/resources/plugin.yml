@@ -1,3 +1,4 @@
-main: @@main@@
-name: @@name@@
-version: @@version@@
+main: io.github.vanillaextract.core.VanillaCore
+name: VECore
+version: 0.1-alpha
+authors: [0ct0ber, scarger17]
