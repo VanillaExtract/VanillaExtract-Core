@@ -1,0 +1,28 @@
+import org.apache.tools.ant.filters.ReplaceTokens
+
+group 'io.github.vanillaextract'
+version '1.0-SNAPSHOT'
+
+apply plugin: 'java'
+
+sourceCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compile files('libs/spigot-1.8.jar')
+    testCompile group: 'junit', name: 'junit', version: '4.12'
+}
+
+processResources {
+    from('src/main/java/resources')
+    filter(ReplaceTokens,
+            tokens: [version: project.version,
+                     name: project.name, main: "${project.group}.VanillaCore".toString()])
+}
+
+jar {
+    archiveName 'VanillaCore.jar'
+}

@@ -1,0 +1,3 @@
+main: @@main@@
+name: @@name@@
+version: @@version@@
