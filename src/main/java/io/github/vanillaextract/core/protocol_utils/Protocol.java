@@ -1,4 +1,4 @@
-package io.github.vanillaextract.core.protocol_utils
+package io.github.vanillaextract.core.protocol_utils;
 
 public class Protocol {
 
