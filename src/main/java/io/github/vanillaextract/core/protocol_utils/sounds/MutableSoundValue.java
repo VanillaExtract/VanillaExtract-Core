@@ -1,3 +1,7 @@
+package io.github.vanillaextract.core.protocol_utils.sounds;
+
+import org.bukkit.Sound;
+
 /**A SoundValue object that allows for the editing of the sound, volume and pitch.
   *
   *{@inheritDoc}
