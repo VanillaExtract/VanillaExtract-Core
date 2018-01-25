@@ -8,8 +8,10 @@ public static final SoundValue SILENT = new SoundValue(Sounds.trySounds("DIG_WOO
 
 
 /**Creates a trio of sound values with the given sound enum, volume, and pitch. This does not permit null values.
+  *All SoundValue objects are immutable, unless they are extended to be made mutable.
   *
   *@throws IllegalArgumentException If the sound provided is null
+  *@see io.github.vanillaextract.core.protocol_utils.sounds.MutableSoundValue
   */
 public SoundValue(Sound sound, float volume, float pitch) {
     if (sound == null) throw new IllegalArgumentException("Sound provided cannot be null");
