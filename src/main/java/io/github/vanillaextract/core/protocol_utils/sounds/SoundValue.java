@@ -1,3 +1,7 @@
+package io.github.vanillaextract.core.protocol_utils.sounds;
+
+import org.bukkit.Sound;
+
 public class SoundValue {
 
 Sound sound;
