@@ -5,7 +5,7 @@ import java.util.ArrayList;
 
 public class Initializer<P extends Plugin> {
 
-    private final P plugin;
+    protected final P plugin;
     private ArrayList<Initializable<P>> list = new ArrayList<Initializable<P>>();
 
     public Initializer(P plugin) throws IllegalArgumentException {
