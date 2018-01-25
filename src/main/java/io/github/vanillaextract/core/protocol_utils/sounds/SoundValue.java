@@ -4,7 +4,7 @@ private Sound sound;
 private float volume;
 private float pitch;
 
-public static final SoundValue SILENT = new SoundValue(Sounds.trySounds("DIG_WOOL", "BLOCK_CLOTH_BREAK"), 0.0001f, 1f);
+public static final SoundValue SILENT = new SoundValue(Sounds.trySounds("DIG_WOOL", "BLOCK_CLOTH_BREAK"), 0.00001f, 1f);
 
 
 /**Creates a trio of sound values with the given sound enum, volume, and pitch. This does not permit null values.
