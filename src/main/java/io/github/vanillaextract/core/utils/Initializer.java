@@ -15,10 +15,11 @@ public class Initializer<P extends Plugin> {
     
     public Initializer(P plugin, Collection<Initializable<P>> initializables) {
         if (plugin == null) throw new IllegalArgumentException("Plugin specified cannot be null");
-        if (initializables == null) throw new IllegalArgumentException("Collection of initializables specified cannot be null"_;
+        if (initializables == null) throw new IllegalArgumentException("Collection of initializables specified cannot be null");
         for (Initializable<P> initializable : initializables) {
             if (initializable == null) continue;
-            if (
+            if (containsExact(initializable)) continue;
+            list.add(initializable);
         }
     }
     
