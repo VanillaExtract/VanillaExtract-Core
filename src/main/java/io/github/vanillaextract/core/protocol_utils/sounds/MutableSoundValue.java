@@ -1,6 +1,7 @@
 /**A SoundValue object that allows for the editing of the sound, volume and pitch.
   *
   *{@inheritDoc}
+  */
 
 public class MutableSoundValue extends SoundValue {
 
