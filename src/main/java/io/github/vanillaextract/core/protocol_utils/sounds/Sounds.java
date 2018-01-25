@@ -206,7 +206,6 @@ public enum Sounds {
 	ZOMBIE_WALK,
 	ZOMBIE_WOOD ("ENTITY_ZOMBIE_ATTACK_DOOR_WOOD"),
 	ZOMBIE_WOODBREAK ("ENTITY_ZOMBIE_BREAK_DOOR_WOOD"),
-	SILENT("DIG_WOOL", "BLOCK_CLOTH_BREAK");
 	
 	private final Sound sound;
 	Sounds(String... alternatives) {
@@ -240,13 +239,27 @@ public enum Sounds {
     *@return The sound if it was found; null if it wasn't, or the name provided was null
     *
     */
-	public static Sound trySound(String soundname) {
+    public static Sound trySound(String soundname) {
 		if (soundname == null) return null;
 		try {
 			return Sound.valueOf(soundname);
 		} catch (IllegalArgumentException ex) {
 			return null;
 		}
+	}
+	
+   /**Tries to get the Bukkit sound from the first soundname possible. This also accepts null values.
+     *
+     *@return The first sound found; null if no sound was found
+     *
+     */
+    public static Sound trySounds(String... soundnames) {
+		if (soundnames == null) return null;
+		for (String soundname : soundnames) {
+			Sound s = trySound(soundname);
+			if (s != null) return s;
+		}
+		return null;
 	}
 	
 }
