@@ -1,6 +1,9 @@
 package io.github.vanillaextract.core;
 
+import io.github.vanillaextract.core.listeners.EventListener;
 import io.github.vanillaextract.core.protocol_utils.Protocol;
+import org.bukkit.Bukkit;
+import org.bukkit.plugin.*;
 import org.bukkit.plugin.java.JavaPlugin;
 
 
@@ -13,7 +16,10 @@ public class VanillaCore extends JavaPlugin {
     public void onEnable(){
         main = this;
         //load disk operations, inject dependencies, etc
-        
+
+        protocol = new Protocol(this);
+        this.registerListeners();
+
         getLogger().info("VanillaExtract (Core) v0.1-ALPHA enabled");
     }
 
@@ -21,8 +27,6 @@ public class VanillaCore extends JavaPlugin {
     public void onDisable(){
         //gc,flushing,saving,etc.
         main = null;
-        protocol = new Protocol(this);
-        
         getLogger().info("VanillaExtract (Core) v0.1-ALPHA disabled");
     }
     
@@ -35,6 +39,14 @@ public class VanillaCore extends JavaPlugin {
         if (!enabled()) throw new IllegalStateException("VanillaCore is disabled");
         return main;
     }
+
+    private void registerListeners()
+    {
+        PluginManager pluginManager = Bukkit.getPluginManager();
+
+        pluginManager.registerEvents(new EventListener(), this);
+    }
+
     
     public static final boolean enabled() {
         return main != null;
