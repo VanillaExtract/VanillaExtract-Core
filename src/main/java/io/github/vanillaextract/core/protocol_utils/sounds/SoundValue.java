@@ -28,7 +28,7 @@ public SoundValue(Sound sound, float volume, float pitch) {
   *
   */
 public final Sound getSound() {
-    return Sound;
+    return sound;
     }
     
 public final float getVolume() {

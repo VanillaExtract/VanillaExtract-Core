@@ -1,11 +1,13 @@
 package io.github.vanillaextract.core;
 
+import io.github.vanillaextract.core.protocol_utils.Protocol;
 import org.bukkit.plugin.java.JavaPlugin;
 
 
 public class VanillaCore extends JavaPlugin {
     
     private static VanillaCore main = null;
+    private Protocol protocol;
 
     @Override
     public void onEnable(){
@@ -19,6 +21,7 @@ public class VanillaCore extends JavaPlugin {
     public void onDisable(){
         //gc,flushing,saving,etc.
         main = null;
+        protocol = new Protocol(this);
         
         getLogger().info("VanillaExtract (Core) v0.1-ALPHA disabled");
     }

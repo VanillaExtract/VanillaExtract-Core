@@ -1,4 +1,5 @@
 main: io.github.vanillaextract.core.VanillaCore
 name: VECore
 version: 0.1-alpha
-authors: [0ct0ber, scarger17]
+authors: [0ct0ber, scarger17, Leo101]
+depends: [ProtocolLib]
