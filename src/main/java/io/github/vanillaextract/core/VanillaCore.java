@@ -18,7 +18,6 @@ public class VanillaCore extends JavaPlugin {
     public void onEnable(){
         main = this;
         //load disk operations, inject dependencies, etc
-
         protocol = new Protocol(this);
 
         this.registerListeners();
@@ -54,8 +53,6 @@ public class VanillaCore extends JavaPlugin {
 
     private void registerConfig()
     {
-        if (!this.getConfig().contains("platform"))
-        {
             this.saveDefaultConfig();
 
             if (!getConfig().contains("platform"))
@@ -72,7 +69,6 @@ public class VanillaCore extends JavaPlugin {
 
             this.saveConfig();
             this.reloadConfig();
-        }
     }
 
     
