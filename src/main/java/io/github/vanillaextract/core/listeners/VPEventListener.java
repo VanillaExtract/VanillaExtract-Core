@@ -6,7 +6,7 @@ import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerJoinEvent;
 import org.bukkit.event.player.PlayerQuitEvent;
 
-public class EventListener implements Listener
+public class VPEventListener implements Listener
 {
 
     @EventHandler
